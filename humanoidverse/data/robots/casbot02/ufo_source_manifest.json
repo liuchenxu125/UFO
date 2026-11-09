@@ -1,0 +1,74 @@
+{
+  "repository": "https://github.com/liuchenxu125/SuperMimic-Reproduced",
+  "commit": "e8af1d8ff6a3771815f335f3940e6800336a40fc",
+  "source_directory": "src/supermimic/robots/assets/casbot02",
+  "files": {
+    "PROTOMOTIONS_LICENSE.txt": "59899c6091b540582ed617e8eeaac4919dc985ccfc35459ee9752b699be5205b",
+    "README.md": "1825b30f3fab1801ffcc0cb107e4d77b939eb38224eb4459af75d64f74d8f276",
+    "SUPERMIMIC_LICENSE": "9892007d6c8f8b28c00a48557289fa42a285915cb500b5cf01ec2bb0c15f197f",
+    "copied_files_sha256.json": "d1ae9eba71e86a670fe74e056e3b0cd91adbbd30ffb2be4f9601105e9a2fe8fa",
+    "meshes/base_link.STL": "e9f1c06ae8cabed1fe5466fe976960995ce01fae2c53b68a951e0c655967dc56",
+    "meshes/head_pitch_link.STL": "6d40af3b6ef64bd09c387aec4c826542c103e2f6a25f0ad211c48871eddf31cc",
+    "meshes/head_yaw_link.STL": "9025045b6cf183dea130e699521a2bd5b8fa77861929f94c34490febf94b5e6a",
+    "meshes/left_base_link.STL": "d8851e50188ac14edba1552b37d4ccb8f61c0d7ad7338a8db9623512476e968b",
+    "meshes/left_elbow_pitch_link.STL": "36a8e7126425b8337fe247a1ee5a9095a841d9e510b1a1250e1ef4910bc9cf5a",
+    "meshes/left_hand_link.STL": "46eba0cc914b21e527d2a9eabedab0ea1cd74f2ad064794da86e3968847be18b",
+    "meshes/left_leg_ankle_pitch_link.STL": "f7a8fc34cdcd49a9056b589394d20106dac533d8ff08e3f329f54e657c672c12",
+    "meshes/left_leg_ankle_roll_link.STL": "bd78afe0a7689e3f18590eba257dedb94bd840b9169cc8d8468297fc72338c92",
+    "meshes/left_leg_knee_pitch_link.STL": "8eb73b5557d9e166f5b38fcafd1b15a6006b48b36d7395a43da9d9010e5c9e53",
+    "meshes/left_leg_pelvic_pitch_link.STL": "c857c5fe4d0624e4f4bd661f2524199c6a1f3914ab67e97b2dfafde07baf1d95",
+    "meshes/left_leg_pelvic_roll_link.STL": "4990eaeb206d056be2c6bf582e520f5a1f33295ab7cb592ea4fd1590d8538f64",
+    "meshes/left_leg_pelvic_yaw_link.STL": "b403ca535f6d4ec2e0475e3b09eb284d008dfc4def50211302a36c79591a8416",
+    "meshes/left_shoulder_pitch_link.STL": "323a37cfd46a682fdab03b325781c2ef60b35092708134eabee93e6f57e5a8b5",
+    "meshes/left_shoulder_roll_link.STL": "538c22b169b5986743656c1446347cef72d5d5406cedc542f361199983ae0eaa",
+    "meshes/left_shoulder_yaw_link.STL": "f6ea616868014fa9729e2e51bd465265644bacfef037c05ec47c8232b1a4eddd",
+    "meshes/left_wrist_pitch_link.STL": "c850dfbb7a5d99fe9a860a76031db4ec4e5f35d4c29b37b666c24b86ce299274",
+    "meshes/left_wrist_roll_link.STL": "21b34b44e526a81e041a9356339b49bf7f3c60409b59879fcbe10a73fab9588d",
+    "meshes/left_wrist_yaw_link.STL": "584e480eb5f1e1ad534b48aaf83b05faea53a6cd6bccd0345ff4f0123864e94e",
+    "meshes/right_base_link.STL": "c506bceeb28732ea1220d4a62000064a0621994c4efe711c954cc6605abd4a34",
+    "meshes/right_elbow_pitch_link.STL": "727f6ca8d06def27dfe0947fbc0342672611e03fbf8a6b172b4b85bc117a2428",
+    "meshes/right_hand_link.STL": "69414d0d0d98c15c4ef7afdebab9a581dcbcd7899fa3e9e4180ac8806ad62b3f",
+    "meshes/right_leg_ankle_pitch_link.STL": "dfc5ad42ac19f44710125dafc753e812ef997e55a303e546b3f32fccefae1084",
+    "meshes/right_leg_ankle_roll_link.STL": "81b12fc5b41db280f8486230e357b7d79059cc6d8738672d657e2e461fc35484",
+    "meshes/right_leg_knee_pitch_link.STL": "ac51cf4cee8c399b4619e67740dd613166e99c219a1863a8ebdb118207c5f441",
+    "meshes/right_leg_pelvic_pitch_link.STL": "2163a28e52e0750e18c8344c5b6a4b10c1dd65a373c86fe73a3281bc1b49ca27",
+    "meshes/right_leg_pelvic_roll_link.STL": "8e46f2abc6d6062fcfe0d8a40384ffa9bcb7637c116992bfa329d6b98fc5ceaf",
+    "meshes/right_leg_pelvic_yaw_link.STL": "4d89b149f1f8ffcdc5d721a302539fb562c5a679f95d51c2ca72352e5a59d33d",
+    "meshes/right_shoulder_pitch_link.STL": "deb88ee633c19de42f6f3750e67b2cd1929f5b57d95804240ada0376646b5c00",
+    "meshes/right_shoulder_roll_link.STL": "3c374e7bc2125a15e8169419612245bfe0e0463071d0a136ae26f8dd74aa68c6",
+    "meshes/right_shoulder_yaw_link.STL": "93651d6190a957056188eb6a507895c100f78d41155d32054b2548fbf00bdf55",
+    "meshes/right_wrist_pitch_link.STL": "798053845674e799fd4507e75069a44571130e26d03f58090b1f67f1b9f7c822",
+    "meshes/right_wrist_roll_link.STL": "4001acd9a74cc3af7eb7d618c408de4bf2d677eee05b51305d73f91f35caf8e8",
+    "meshes/right_wrist_yaw_link.STL": "f8071d4307d8d19defee2f301178a91ff145389df64bcf91cc9b5d998b6631a2",
+    "meshes/waist_yaw_link.STL": "f1af2cfce5e7227400e17b77af1d78bcfd85e60208d806cc258b4c3f4b99b81a",
+    "motor_parameters.json": "624b573ea04761337fb045ccf258e1373ec2275583495229be7a0d7770d9fb45",
+    "primitive_collision.json": "b6d6cd00bb22aefa3e32fa9b93cbc75064616cb496532bf9c1791acace2a476a",
+    "source_manifest.json": "fd23a76ee8919c9888c0a520ef8ec8dcd3fa41f98adc85c3bc9ab60a010c90b7",
+    "xml/casbot02.xml": "1cfc8d558969d8335a496b0d400239c6d084108fb4cdeaac7ce8af0204b0bf3f",
+    "xml/casbot02_primitives.xml": "3c2b84cf515f50a0c2726cecfbba9fc9152dc4709734a4d96dfe5310150af005"
+  },
+  "local_overrides": {
+    "motor_parameters.json": {
+      "sha256": "29d9d2d08e19015857746b5eec3b27f8406f4cee36cf02e0107ca38aa9596eaa",
+      "revision": "20261106",
+      "reason": "User motor revision; URDF limits plus user 120 Nm / 12.56 rad/s override for legs 3/5/6 and waist; prescribed armature, recomputed PD/action scales; position limits retained."
+    },
+    "xml/casbot02.xml": {
+      "sha256": "b127f60f0b11e30e3a12f54af48550ed281857fcb1b79b146ea8a031116098f7",
+      "revision": "20261106",
+      "reason": "User motor revision; URDF limits plus user 120 Nm / 12.56 rad/s override for legs 3/5/6 and waist; prescribed armature, recomputed PD/action scales; position limits retained."
+    },
+    "xml/casbot02_primitives.xml": {
+      "sha256": "329e9dc496e975b7b79162569bb3e4e09b012293ac59c9843e28cee3c3b3c5ed",
+      "revision": "20261107_nopalms",
+      "reason": "User-supplied palm-free primitive XML, wrist inertials and wrist/shin collision revision; existing motors and joint definitions retained.",
+      "source_xml_sha256": "329e9dc496e975b7b79162569bb3e4e09b012293ac59c9843e28cee3c3b3c5ed"
+    },
+    "README.md": {
+      "sha256": "15176dba09618cce635b069af68772fcd569062e49665d803497fb5254f8acae",
+      "revision": "20261107_nopalms",
+      "reason": "User-supplied palm-free primitive XML, wrist inertials and wrist/shin collision revision; existing motors and joint definitions retained.",
+      "source_xml_sha256": "329e9dc496e975b7b79162569bb3e4e09b012293ac59c9843e28cee3c3b3c5ed"
+    }
+  }
+}

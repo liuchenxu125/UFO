@@ -153,6 +153,8 @@ def load_robot_training_spec(config_path: str | Path) -> RobotTrainingSpec:
     actuator_source = str(actuator.get("source", ""))
     if actuator_source not in {"g1_mode15", "g1-mode_15", "yaml"}:
         raise ValueError("training.actuator.source must be one of: g1_mode15, g1-mode_15, yaml")
+    if actuator.get("model", "dc_motor") not in {"dc_motor", "builtin_position"}:
+        raise ValueError("training.actuator.model must be dc_motor or builtin_position")
     if actuator_source == "yaml":
         joints = actuator.get("joints")
         if not isinstance(joints, dict):

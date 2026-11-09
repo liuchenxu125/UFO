@@ -1,5 +1,8 @@
 # Robot Config Training
 
+For the configured Casbot02 FB task and its LAFAN1 data, see
+[Casbot02 FB training](casbot02_fb_training.md).
+
 UFO now has an experimental `--robot-config` training entry point. The goal is
 to let a robot-specific MuJoCo XML, curated robot YAML, and adapted RobotState
 motion data enter the training initialization path without editing the core

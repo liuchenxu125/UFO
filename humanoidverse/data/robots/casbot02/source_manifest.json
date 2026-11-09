@@ -1,0 +1,75 @@
+{
+  "source": "/home/casbot/Desktop/ScaleBFM/ScaleTrack/source/scaletrack/scaletrack/assets/robots/casbot02",
+  "source_xml_sha256": "6b7bfb6d5ec556d9e62126e6b21fd7f2bc8be5c208486cf2542e16f3c955d5a5",
+  "modifications": [
+    "remove embedded ground/lights",
+    "joint position limits match training URDF",
+    "passive damping/frictionloss zero; PD gains supplied in robot config",
+    "2026-10-28: leg_[lr]3/5/6_joint armature 0.039 -> 0.029, matching colleague supermimic_casbot02_22dof@f38a49a; collision geometry unchanged",
+    "2026-10-29: both training MJCF joint limits aligned with the user-confirmed hardware limits in /home/casbot/Downloads/casbot_02_27dof.xml; preserve gains, armature, body transforms and collision geometry"
+  ],
+  "limit_changes": [
+    {
+      "joint": "leg_l4_joint",
+      "old": "0 2.53073",
+      "new": "0 2.5307"
+    },
+    {
+      "joint": "leg_r1_joint",
+      "old": "-1.91986 1.57",
+      "new": "-1.9199 1.5708"
+    },
+    {
+      "joint": "leg_r4_joint",
+      "old": "0 2.53073",
+      "new": "0 2.5307"
+    },
+    {
+      "joint": "upper_left_4_joint",
+      "old": "-2.26 0",
+      "new": "-1.8675 0"
+    },
+    {
+      "joint": "upper_right_4_joint",
+      "old": "-2.26 0",
+      "new": "-1.8675 0"
+    }
+  ],
+  "joint_limits_override": {
+    "source": "/home/casbot/Downloads/casbot_02_27dof.xml",
+    "source_sha256": "f4ac328c8035beff6c6cf73942dddee18e95a2cfdb5c9c8ed667db1c2265d179",
+    "date": "2026-10-29",
+    "reason": "User confirmed retargeting XML limits match actual robot allowable limits",
+    "applied_to": [
+      "xml/casbot02.xml",
+      "xml/casbot02_primitives.xml"
+    ],
+    "changes": [
+      {
+        "joint": "leg_l4_joint",
+        "old": "0 2.5307",
+        "new": "0 2.53073"
+      },
+      {
+        "joint": "leg_r1_joint",
+        "old": "-1.9199 1.5708",
+        "new": "-1.91986 1.57"
+      },
+      {
+        "joint": "leg_r4_joint",
+        "old": "0 2.5307",
+        "new": "0 2.53073"
+      },
+      {
+        "joint": "upper_left_4_joint",
+        "old": "-1.8675 0",
+        "new": "-2.26 0"
+      },
+      {
+        "joint": "upper_right_4_joint",
+        "old": "-1.8675 0",
+        "new": "-2.26 0"
+      }
+    ]
+  }
+}

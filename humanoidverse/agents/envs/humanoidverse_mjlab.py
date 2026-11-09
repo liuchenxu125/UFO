@@ -367,7 +367,7 @@ def make_mjlab_ufo_env_cfg(
 ):
     """Create an MJLab ManagerBasedRlEnvCfg with UFO robot metadata."""
     import mujoco
-    from mjlab.actuator import DcMotorActuatorCfg
+    from mjlab.actuator import BuiltinPositionActuatorCfg, DcMotorActuatorCfg
     from mjlab.entity import EntityArticulationInfoCfg, EntityCfg
     from mjlab.envs import ManagerBasedRlEnvCfg
     from mjlab.envs import mdp as mjlab_mdp
@@ -392,6 +392,10 @@ def make_mjlab_ufo_env_cfg(
         raise FileNotFoundError(f"MJCF asset not found: {xml_path}")
     if "actuatorfrcrange" in xml_path.read_text():
         raise ValueError(f"MJLab robot XML must not contain actuatorfrcrange: {xml_path}")
+    actuator_config = dict((robot_training or {}).get("actuator") or {})
+    actuator_model = actuator_config.get("model", "dc_motor")
+    if actuator_model not in {"dc_motor", "builtin_position"}:
+        raise ValueError(f"Unsupported actuator model: {actuator_model}")
 
     def spec_fn():
         spec = mujoco.MjSpec.from_file(str(xml_path))
@@ -399,6 +403,12 @@ def make_mjlab_ufo_env_cfg(
         # actuators are removed so MJLab adds equivalent position actuators.
         for actuator in list(spec.actuators):
             spec.delete(actuator)
+        if actuator_model == "builtin_position":
+            # The scene owns physics settings; source MJCF options must not
+            # override them during attachment (e.g. Casbot's 1 ms XML timestep).
+            defaults = mujoco.MjSpec().option
+            for name in ("timestep", "iterations", "tolerance", "jacobian"):
+                setattr(spec.option, name, getattr(defaults, name))
         return spec
 
     stiffness = _to_float_dict(config.robot.control.stiffness)
@@ -417,18 +427,37 @@ def make_mjlab_ufo_env_cfg(
         kp = _match_joint_value(joint_name, stiffness)
         kd = _match_joint_value(joint_name, damping)
         effort_limit = effort_limits[i]
-        actuators.append(
-            DcMotorActuatorCfg(
-                target_names_expr=(joint_name,),
-                stiffness=kp,
-                damping=kd,
-                effort_limit=effort_limit,
-                saturation_effort=effort_limit,
-                velocity_limit=velocity_limits[i],
-                armature=armature[i] if i < len(armature) else None,
-                frictionloss=friction[i] if i < len(friction) else None,
-            )
+        actuator_kwargs = dict(
+            target_names_expr=(joint_name,),
+            stiffness=kp,
+            damping=kd,
+            effort_limit=effort_limit,
+            armature=armature[i] if i < len(armature) else None,
+            frictionloss=friction[i] if i < len(friction) else None,
         )
+        if actuator_model == "builtin_position":
+            # Match native implicit PD: velocity limits remain metadata, not
+            # an extra torque-speed curve as used by DcMotorActuatorCfg.
+            delay = dict(actuator_config.get("command_delay") or {})
+            delay_enabled = bool(config.domain_rand.get("randomize_ctrl_delay", False))
+            actuators.append(
+                BuiltinPositionActuatorCfg(
+                    **actuator_kwargs,
+                    viscous_damping=float(actuator_config.get("viscous_damping", 0.0)),
+                    delay_min_lag=int(delay.get("min_lag", 0)) if delay_enabled else 0,
+                    delay_max_lag=int(delay.get("max_lag", 0)) if delay_enabled else 0,
+                    delay_update_period=int(delay.get("update_period", 0)),
+                    delay_per_env_phase=False,
+                )
+            )
+        else:
+            actuators.append(
+                DcMotorActuatorCfg(
+                    **actuator_kwargs,
+                    saturation_effort=effort_limit,
+                    velocity_limit=velocity_limits[i],
+                )
+            )
 
         scale = float(config.robot.control.action_scale)
         if bool(config.robot.control.action_rescale):
@@ -445,7 +474,7 @@ def make_mjlab_ufo_env_cfg(
     print(
         "[INFO] MJLab asset: "
         f"xml_path={xml_path}, actuator_source={actuator_source}, "
-        f"actuator_count={len(actuators)}, joint_order={list(dof_names)}, "
+        f"actuator_model={actuator_model}, actuator_count={len(actuators)}, joint_order={list(dof_names)}, "
         f"action_scale={[action_scale[name] for name in dof_names]}, "
         f"kp={[_match_joint_value(name, stiffness) for name in dof_names]}, "
         f"kd={[_match_joint_value(name, damping) for name in dof_names]}, "
@@ -469,7 +498,10 @@ def make_mjlab_ufo_env_cfg(
     robot_cfg = EntityCfg(
         spec_fn=spec_fn,
         init_state=init_state,
-        articulation=EntityArticulationInfoCfg(actuators=tuple(actuators), soft_joint_pos_limit_factor=1.0),
+        articulation=EntityArticulationInfoCfg(
+            actuators=tuple(actuators),
+            soft_joint_pos_limit_factor=float(actuator_config.get("soft_joint_pos_limit_factor", 1.0)),
+        ),
         sort_actuators=True,
     )
     sensors = (
@@ -578,8 +610,8 @@ def make_mjlab_ufo_env_cfg(
         events=events,
         seed=seed,
         sim=SimulationCfg(
-            nconmax=512,
-            njmax=4096,
+            nconmax=int(config.robot.get("simulation", {}).get("nconmax", 512)),
+            njmax=int(config.robot.get("simulation", {}).get("njmax", 4096)),
             contact_sensor_maxmatch=256,
             mujoco=MujocoCfg(timestep=1.0 / float(config.simulator.config.sim.fps)),
         ),

@@ -113,6 +113,7 @@ def build_ufo_mjlab_config(
     cartwheel_aux_safe: bool = False,
     num_agent_updates: int | None = None,
     robot_config: str | Path | None = None,
+    buffer_device: str | None = None,
 ) -> TrainConfig:
     agent = canonical_agent_name(agent)
     robot_training = load_robot_training_spec(robot_config or DEFAULT_ROBOT_CONFIG)
@@ -233,7 +234,7 @@ def build_ufo_mjlab_config(
         wandb_pname=wandb_project,
         wandb_run_name=wandb_run_name or f"ufo_{agent}",
         load_expert_data_from_motion_lib=True,
-        buffer_device="cuda" if device.startswith("cuda") else "cpu",
+        buffer_device=buffer_device or ("cuda" if device.startswith("cuda") else "cpu"),
         disable_tqdm=True,
         evaluations=evaluations,
         eval_every_steps=train_runtime["eval_every_steps"],
@@ -319,6 +320,7 @@ def run_train(args: argparse.Namespace, log_dir: Path) -> None:
         cartwheel_aux_safe=bool(args.cartwheel_aux_safe),
         num_agent_updates=args.num_agent_updates,
         robot_config=args.robot_config,
+        buffer_device=args.buffer_device,
     )
     print(
         "[INFO] UFO train: "
@@ -327,6 +329,7 @@ def run_train(args: argparse.Namespace, log_dir: Path) -> None:
         f"data_path={cfg.env.lafan_tail_path}, data_mix_weights={cfg.env.data_mix_weights}, "
         f"num_envs_per_rank={args.num_envs}, global_parallel_envs={args.num_envs * world_size}, "
         f"num_env_steps_global={args.num_env_steps}, buffer_size_per_rank={cfg.buffer_size}, "
+        f"buffer_device={cfg.buffer_device}, "
         f"num_agent_updates={cfg.num_agent_updates}, update_agent_every_local={cfg.update_agent_every}, "
         f"cartwheel_aux_safe={args.cartwheel_aux_safe}, lr_scale={args.lr_scale}, clip_grad_norm={args.clip_grad_norm}, "
         f"disable_dr={cfg.env.disable_domain_randomization}, disable_obs_noise={cfg.env.disable_obs_noise}, "
@@ -453,6 +456,12 @@ def parse_args() -> argparse.Namespace:
         help="Override latent update interval. Defaults to 100 for FB and 10 for TeCH.",
     )
     parser.add_argument("--buffer-size", type=int, default=DEFAULT_BUFFER_SIZE, help="Replay capacity per rank/GPU.")
+    parser.add_argument(
+        "--buffer-device",
+        choices=["cpu", "cuda"],
+        default=None,
+        help="Device for the replay and expert buffers. Defaults to cuda when training on GPU.",
+    )
     parser.add_argument(
         "--num-agent-updates",
         type=int,

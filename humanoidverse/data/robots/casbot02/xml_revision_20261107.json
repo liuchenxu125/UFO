@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-07",
+  "source_xml": "/home/liuchenxu/Desktop/SuperMimic-Reproduced/src/supermimic/robots/assets/casbot02/xml/casbot02_primitives.xml",
+  "source_sha256": "329e9dc496e975b7b79162569bb3e4e09b012293ac59c9843e28cee3c3b3c5ed",
+  "previous_training_xml_sha256": "91357fc30c55936e5912bc7108604e9d7a9487c7cfb26949ac262facd5318b1a",
+  "backup_dir": "/srv/liuchenxu/UFO/runs/casbot02_xml_update_20261107/before",
+  "changes": [
+    "Remove left/right palm visual meshes",
+    "Replace wrist rigid-body mass, center of mass and inertia with palm-free values",
+    "Replace hand collision capsules with wrist collision capsules",
+    "Use one 0.05-m-radius shin capsule per leg"
+  ],
+  "joint_order_limits_and_armatures_unchanged": true,
+  "motor_parameters_sha256": "29d9d2d08e19015857746b5eec3b27f8406f4cee36cf02e0107ca38aa9596eaa",
+  "data_source_unchanged": "data/lafan1_casbot02",
+  "training_manifest": "configs/data/casbot02_lafan1_20261107_nopalms.yaml",
+  "work_dir": "/srv/liuchenxu/UFO/runs/ufo_fb_casbot02_20261107_nopalms_4096",
+  "mesh_assets_sha256_verified": true
+}

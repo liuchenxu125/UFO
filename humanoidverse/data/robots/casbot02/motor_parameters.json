@@ -1,0 +1,391 @@
+{
+  "source": "/srv/liuchenxu/SuperMimic-Reproduced/src/supermimic/robots/assets/casbot02/CASBOT02_ENCOS_7dof_shell_20251015.urdf",
+  "source_sha256": "52433d5928295c3c92e013f69785ad2854a54d260e6ece14cce8bb65974e794f",
+  "default_joint_pos_source": "User-specified default pose; arm names normalized to the MJCF upper_left_N_joint / upper_right_N_joint names. Waist remains zero.",
+  "default_joint_pos": {
+    "leg_l1_joint": -0.185,
+    "leg_l2_joint": 0.0,
+    "leg_l3_joint": 0.0,
+    "leg_l4_joint": 0.36,
+    "leg_l5_joint": -0.175,
+    "leg_l6_joint": 0.0,
+    "leg_r1_joint": -0.185,
+    "leg_r2_joint": 0.0,
+    "leg_r3_joint": 0.0,
+    "leg_r4_joint": 0.36,
+    "leg_r5_joint": -0.175,
+    "leg_r6_joint": 0.0,
+    "waist_yaw_joint": 0.0,
+    "upper_left_1_joint": 0.1,
+    "upper_left_2_joint": 0.175,
+    "upper_left_3_joint": 0.0,
+    "upper_left_4_joint": -0.35,
+    "upper_left_5_joint": 0.0,
+    "upper_left_6_joint": 0.0,
+    "upper_left_7_joint": 0.0,
+    "upper_right_1_joint": 0.1,
+    "upper_right_2_joint": -0.175,
+    "upper_right_3_joint": 0.0,
+    "upper_right_4_joint": -0.35,
+    "upper_right_5_joint": 0.0,
+    "upper_right_6_joint": 0.0,
+    "upper_right_7_joint": 0.0
+  },
+  "motors": {
+    "leg_l1_joint": {
+      "stiffness": 276.34892323050207,
+      "damping": 17.59291886010284,
+      "effort_limit": 150.0,
+      "velocity_limit": 14.0,
+      "armature": 0.07,
+      "friction": 0.0,
+      "action_scale": 0.13569801380670235
+    },
+    "leg_l2_joint": {
+      "stiffness": 276.34892323050207,
+      "damping": 17.59291886010284,
+      "effort_limit": 150.0,
+      "velocity_limit": 14.0,
+      "armature": 0.07,
+      "friction": 0.0,
+      "action_scale": 0.13569801380670235
+    },
+    "leg_l3_joint": {
+      "stiffness": 259.7561443113906,
+      "damping": 16.536589746259807,
+      "effort_limit": 120.0,
+      "velocity_limit": 12.56,
+      "armature": 0.065797,
+      "friction": 0.0,
+      "action_scale": 0.11549293696027682
+    },
+    "leg_l4_joint": {
+      "stiffness": 276.34892323050207,
+      "damping": 17.59291886010284,
+      "effort_limit": 150.0,
+      "velocity_limit": 14.0,
+      "armature": 0.07,
+      "friction": 0.0,
+      "action_scale": 0.13569801380670235
+    },
+    "leg_l5_joint": {
+      "stiffness": 259.7561443113906,
+      "damping": 16.536589746259807,
+      "effort_limit": 120.0,
+      "velocity_limit": 12.56,
+      "armature": 0.065797,
+      "friction": 0.0,
+      "action_scale": 0.11549293696027682
+    },
+    "leg_l6_joint": {
+      "stiffness": 259.7561443113906,
+      "damping": 16.536589746259807,
+      "effort_limit": 120.0,
+      "velocity_limit": 12.56,
+      "armature": 0.065797,
+      "friction": 0.0,
+      "action_scale": 0.11549293696027682
+    },
+    "leg_r1_joint": {
+      "stiffness": 276.34892323050207,
+      "damping": 17.59291886010284,
+      "effort_limit": 150.0,
+      "velocity_limit": 14.0,
+      "armature": 0.07,
+      "friction": 0.0,
+      "action_scale": 0.13569801380670235
+    },
+    "leg_r2_joint": {
+      "stiffness": 276.34892323050207,
+      "damping": 17.59291886010284,
+      "effort_limit": 150.0,
+      "velocity_limit": 14.0,
+      "armature": 0.07,
+      "friction": 0.0,
+      "action_scale": 0.13569801380670235
+    },
+    "leg_r3_joint": {
+      "stiffness": 259.7561443113906,
+      "damping": 16.536589746259807,
+      "effort_limit": 120.0,
+      "velocity_limit": 12.56,
+      "armature": 0.065797,
+      "friction": 0.0,
+      "action_scale": 0.11549293696027682
+    },
+    "leg_r4_joint": {
+      "stiffness": 276.34892323050207,
+      "damping": 17.59291886010284,
+      "effort_limit": 150.0,
+      "velocity_limit": 14.0,
+      "armature": 0.07,
+      "friction": 0.0,
+      "action_scale": 0.13569801380670235
+    },
+    "leg_r5_joint": {
+      "stiffness": 259.7561443113906,
+      "damping": 16.536589746259807,
+      "effort_limit": 120.0,
+      "velocity_limit": 12.56,
+      "armature": 0.065797,
+      "friction": 0.0,
+      "action_scale": 0.11549293696027682
+    },
+    "leg_r6_joint": {
+      "stiffness": 259.7561443113906,
+      "damping": 16.536589746259807,
+      "effort_limit": 120.0,
+      "velocity_limit": 12.56,
+      "armature": 0.065797,
+      "friction": 0.0,
+      "action_scale": 0.11549293696027682
+    },
+    "waist_yaw_joint": {
+      "stiffness": 259.7561443113906,
+      "damping": 16.536589746259807,
+      "effort_limit": 120.0,
+      "velocity_limit": 12.56,
+      "armature": 0.065797,
+      "friction": 0.0,
+      "action_scale": 0.11549293696027682
+    },
+    "upper_left_1_joint": {
+      "stiffness": 130.19982125917082,
+      "damping": 8.28877805723131,
+      "effort_limit": 75.0,
+      "velocity_limit": 12.2,
+      "armature": 0.03298,
+      "friction": 0.0,
+      "action_scale": 0.14400941428849554
+    },
+    "upper_left_2_joint": {
+      "stiffness": 130.19982125917082,
+      "damping": 8.28877805723131,
+      "effort_limit": 75.0,
+      "velocity_limit": 12.2,
+      "armature": 0.03298,
+      "friction": 0.0,
+      "action_scale": 0.14400941428849554
+    },
+    "upper_left_3_joint": {
+      "stiffness": 96.84055838348878,
+      "damping": 6.16506142340461,
+      "effort_limit": 36.0,
+      "velocity_limit": 9.3,
+      "armature": 0.02453,
+      "friction": 0.0,
+      "action_scale": 0.09293626709957603
+    },
+    "upper_left_4_joint": {
+      "stiffness": 130.19982125917082,
+      "damping": 8.28877805723131,
+      "effort_limit": 75.0,
+      "velocity_limit": 12.2,
+      "armature": 0.03298,
+      "friction": 0.0,
+      "action_scale": 0.14400941428849554
+    },
+    "upper_left_5_joint": {
+      "stiffness": 96.84055838348878,
+      "damping": 6.16506142340461,
+      "effort_limit": 36.0,
+      "velocity_limit": 9.3,
+      "armature": 0.02453,
+      "friction": 0.0,
+      "action_scale": 0.09293626709957603
+    },
+    "upper_left_6_joint": {
+      "stiffness": 96.84055838348878,
+      "damping": 6.16506142340461,
+      "effort_limit": 36.0,
+      "velocity_limit": 9.3,
+      "armature": 0.02453,
+      "friction": 0.0,
+      "action_scale": 0.09293626709957603
+    },
+    "upper_left_7_joint": {
+      "stiffness": 96.84055838348878,
+      "damping": 6.16506142340461,
+      "effort_limit": 36.0,
+      "velocity_limit": 9.3,
+      "armature": 0.02453,
+      "friction": 0.0,
+      "action_scale": 0.09293626709957603
+    },
+    "upper_right_1_joint": {
+      "stiffness": 130.19982125917082,
+      "damping": 8.28877805723131,
+      "effort_limit": 75.0,
+      "velocity_limit": 12.2,
+      "armature": 0.03298,
+      "friction": 0.0,
+      "action_scale": 0.14400941428849554
+    },
+    "upper_right_2_joint": {
+      "stiffness": 130.19982125917082,
+      "damping": 8.28877805723131,
+      "effort_limit": 75.0,
+      "velocity_limit": 12.2,
+      "armature": 0.03298,
+      "friction": 0.0,
+      "action_scale": 0.14400941428849554
+    },
+    "upper_right_3_joint": {
+      "stiffness": 96.84055838348878,
+      "damping": 6.16506142340461,
+      "effort_limit": 36.0,
+      "velocity_limit": 9.3,
+      "armature": 0.02453,
+      "friction": 0.0,
+      "action_scale": 0.09293626709957603
+    },
+    "upper_right_4_joint": {
+      "stiffness": 130.19982125917082,
+      "damping": 8.28877805723131,
+      "effort_limit": 75.0,
+      "velocity_limit": 12.2,
+      "armature": 0.03298,
+      "friction": 0.0,
+      "action_scale": 0.14400941428849554
+    },
+    "upper_right_5_joint": {
+      "stiffness": 96.84055838348878,
+      "damping": 6.16506142340461,
+      "effort_limit": 36.0,
+      "velocity_limit": 9.3,
+      "armature": 0.02453,
+      "friction": 0.0,
+      "action_scale": 0.09293626709957603
+    },
+    "upper_right_6_joint": {
+      "stiffness": 96.84055838348878,
+      "damping": 6.16506142340461,
+      "effort_limit": 36.0,
+      "velocity_limit": 9.3,
+      "armature": 0.02453,
+      "friction": 0.0,
+      "action_scale": 0.09293626709957603
+    },
+    "upper_right_7_joint": {
+      "stiffness": 96.84055838348878,
+      "damping": 6.16506142340461,
+      "effort_limit": 36.0,
+      "velocity_limit": 9.3,
+      "armature": 0.02453,
+      "friction": 0.0,
+      "action_scale": 0.09293626709957603
+    }
+  },
+  "control_dt": 0.02,
+  "physics_dt": 0.005,
+  "action_scale_factor": 0.25,
+  "soft_joint_pos_limit_factor": 0.9,
+  "previous_parameter_metadata": {
+    "source": "/home/casbot/Desktop/ProtoMotions/protomotions/robot_configs/casbot02.py",
+    "source_sha256": "0fa3c8b076ca0614fa78bce13f6c8f715556c1916715c4ce045bf80fbade6629",
+    "control_parameters_override": {
+      "path": "/home/casbot/Desktop/HANDOFF/src/wbc_mjlab/casbot02_constants.py",
+      "sha256": "4081a9a009c7794404fbd288a68544648be7903590e126783f8a5034d42e7d98",
+      "fields": [
+        "stiffness",
+        "damping",
+        "effort_limit"
+      ],
+      "action_scale_formula": "0.25 * effort_limit / stiffness",
+      "extensions": {
+        "waist_yaw_joint": "Use the declared CASBOT02_WAIST_YAW_ACTUATOR (not included in the source articulation tuple).",
+        "upper_left_6_joint / upper_left_7_joint / upper_right_6_joint / upper_right_7_joint": "Extend CASBOT02_ARM_LIGHT_ACTUATOR to the four additional 27-DOF wrist joints."
+      },
+      "scope": "KP, KD and torque caps changed. Armature, friction, velocity limits and delay remain the existing project settings."
+    },
+    "armature_override": {
+      "date": "2026-10-28",
+      "source": "git@10.11.0.5:yuanxz/yuanxz.git",
+      "branch": "supermimic_casbot02_22dof",
+      "commit": "f38a49ac5a43098587733b7367477e1dec25f811",
+      "joints": [
+        "leg_l3_joint",
+        "leg_l5_joint",
+        "leg_l6_joint",
+        "leg_r3_joint",
+        "leg_r5_joint",
+        "leg_r6_joint"
+      ],
+      "previous": 0.039,
+      "value": 0.029,
+      "scope": "Light-leg reflected inertia only; KP, KD, effort limits and action scales unchanged."
+    }
+  },
+  "parameter_revision": {
+    "date": "2026-11-06",
+    "urdf_path": "/srv/liuchenxu/SuperMimic-Reproduced/src/supermimic/robots/assets/casbot02/CASBOT02_ENCOS_7dof_shell_20251015.urdf",
+    "urdf_sha256": "52433d5928295c3c92e013f69785ad2854a54d260e6ece14cce8bb65974e794f",
+    "urdf_joint_mapping": {
+      "leg_l1_joint": "left_leg_pelvic_pitch_joint",
+      "leg_l2_joint": "left_leg_pelvic_roll_joint",
+      "leg_l3_joint": "left_leg_pelvic_yaw_joint",
+      "leg_l4_joint": "left_leg_knee_pitch_joint",
+      "leg_l5_joint": "left_leg_ankle_pitch_joint",
+      "leg_l6_joint": "left_leg_ankle_roll_joint",
+      "leg_r1_joint": "right_leg_pelvic_pitch_joint",
+      "leg_r2_joint": "right_leg_pelvic_roll_joint",
+      "leg_r3_joint": "right_leg_pelvic_yaw_joint",
+      "leg_r4_joint": "right_leg_knee_pitch_joint",
+      "leg_r5_joint": "right_leg_ankle_pitch_joint",
+      "leg_r6_joint": "right_leg_ankle_roll_joint",
+      "waist_yaw_joint": "waist_yaw_joint",
+      "upper_left_1_joint": "left_shoulder_pitch_joint",
+      "upper_left_2_joint": "left_shoulder_roll_joint",
+      "upper_left_3_joint": "left_shoulder_yaw_joint",
+      "upper_left_4_joint": "left_elbow_pitch_joint",
+      "upper_left_5_joint": "left_wrist_yaw_joint",
+      "upper_left_6_joint": "left_wrist_pitch_joint",
+      "upper_left_7_joint": "left_wrist_roll_joint",
+      "upper_right_1_joint": "right_shoulder_pitch_joint",
+      "upper_right_2_joint": "right_shoulder_roll_joint",
+      "upper_right_3_joint": "right_shoulder_yaw_joint",
+      "upper_right_4_joint": "right_elbow_pitch_joint",
+      "upper_right_5_joint": "right_wrist_yaw_joint",
+      "upper_right_6_joint": "right_wrist_pitch_joint",
+      "upper_right_7_joint": "right_wrist_roll_joint"
+    },
+    "limit_overrides": {
+      "leg_l3_joint": {
+        "effort_limit": 120.0,
+        "velocity_limit": 12.56
+      },
+      "leg_l5_joint": {
+        "effort_limit": 120.0,
+        "velocity_limit": 12.56
+      },
+      "leg_l6_joint": {
+        "effort_limit": 120.0,
+        "velocity_limit": 12.56
+      },
+      "leg_r3_joint": {
+        "effort_limit": 120.0,
+        "velocity_limit": 12.56
+      },
+      "leg_r5_joint": {
+        "effort_limit": 120.0,
+        "velocity_limit": 12.56
+      },
+      "leg_r6_joint": {
+        "effort_limit": 120.0,
+        "velocity_limit": 12.56
+      },
+      "waist_yaw_joint": {
+        "effort_limit": 120.0,
+        "velocity_limit": 12.56
+      }
+    },
+    "limit_overrides_source": "Explicit user correction: both legs 3/5/6 and waist, 120 Nm and 12.56 rad/s.",
+    "frequency_hz": 10.0,
+    "damping_ratio": 2.0,
+    "stiffness_formula": "armature * (2*pi*frequency_hz)^2",
+    "damping_formula": "2 * damping_ratio * armature * (2*pi*frequency_hz)",
+    "action_scale_formula": "0.25 * effort_limit / stiffness",
+    "inertia_units": "kg*m^2 (reflected joint inertia / MuJoCo armature)",
+    "position_limits_source": "Existing MJCF range attributes, unchanged; URDF lower/upper are not imported."
+  }
+}
